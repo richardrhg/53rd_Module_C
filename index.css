@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+main {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.textMove{
+    /*    位移+改變透明度 */
+    opacity: 0;
+    animation: move 2s ease forwards;
+}
+
+@keyframes move {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%) scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0)  scale(1);
+    }
+}
+
+#slogon {
+    /*height: 1000px;*/
+    height: 100vh;
+    padding: 100px 0;
+    width: 100%;
+}
+
+#target {
+    /*height: 1000px;*/
+    padding: 100px 0;
+    width: 100%;
+}
+
+#timing {
+    /*height: 1000px;*/
+    padding: 100px 0;
+    width: 100%;
+}
+
+#aboutUs {
+    /*height: 1000px;*/
+    padding: 100px 0;
+    width: 100%;
+}
+
+.textStyle {
+    color: #a4217f;
+    border-left: 10px solid #a4217f;
+    padding-left: 10px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#slogon {
+    background: url("./images/img104.jpg");
+    background-size: 100% 100%;
+}
+
+.logo {
+    /* ~~~~~~logo被切邊的問題要調整一下~~~~~~*/
+    height: 50px;
+    width: auto;
+    /*max-height: 50px;*/
+    /*max-width: 50px;*/
+    /*width: auto;*/
+    /*height: auto;*/
+}
+
+/*.image-container {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+
+/* 圖片玻璃擬態遮罩 */
+/* 圖片的樣式 */
+/*.image-container img {*/
+/*    display: block;*/
+/*    max-width: 100%;*/
+/*}*/
+
+/* 玻璃效果的遮罩樣式 */
+.backDrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* 設定背景顏色和透明度 */
+    backdrop-filter: blur(20px); /* 使用模糊濾鏡效果 */
+    z-index: 1; /* 將遮罩置於圖片之上 */
+}
+
+/*帥氣的hover效果*/
+.niceCard {
+    /*flex: 1;*/
+    /*flex-basis: 300px;*/
+    /*flex-grow: 0;*/
+    height: 300px;
+    background: #a4217f;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.niceCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.descriptions {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(164, 33, 127, .7);
+    width: 100%;
+    height: 100%;
+    transition: all .7s ease-in-out;
+    /*padding: 20px 10px;*/
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+
+.niceCard:hover .descriptions {
+    left: 0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+
+.niceCard:hover {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: 0px 2px 3px rgba(164, 33, 127, .3);
+    transform: scale(.97);
+}
+
+.niceCard:hover img {
+    transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+
+.containerCodePen .cardCodePen .iconCode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCodePen .cardCodePen .slide {
+    height: 200px;
+    transition: 0.9s;
+}
+
+.containerCodePen .cardCodePen .slide.slide1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: .3s;
+    transform: translateY(100px);
+}
+
+.containerCodePen .cardCodePen:hover .slide.slide1 {
+    transform: translateY(0px);
+}
+
+.containerCodePen .cardCodePen .slide.slide2 {
+    position: relative;
+    box-sizing: border-box;
+    transition: .3s;
+    transform: translateY(-100px);
+}
+
+.containerCodePen .cardCodePen:hover .slide.slide2 {
+    transform: translateY(0);
+}
+
+.containerCodePen .cardCodePen .slide.slide2::after {
+    position: absolute;
+    height: 4px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2c73df;
+}
+
+
+nav ul li a {
+    position: relative;
+    display: block;
+    /*margin: 0 20px;*/
+    /*padding: 5px 10px;*/
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #a4217f;
+    border-width: 0 0 2px 2px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::before {
+    bottom: -8px;
+    left: -8px;
+    opacity: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    /*padding: 0;*/
+    margin: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #a4217f;
+    border-width: 2px 2px 0 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    top: -8px;
+    right: -8px;
+    opacity: 1;
+}
+
+nav ul li a:hover {
+    background: #a4217f;
+    color: white !important;
+}
